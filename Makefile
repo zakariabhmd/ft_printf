@@ -1,4 +1,5 @@
-SRCS	= ft_putstr.c ft_putnbr.c ft_putchar.c ft_adresse.c \
+SRCS	= ft_putstr.c ft_putnbr.c ft_putchar.c ft_adresse.c ft_numberh.c ft_printf.c \
+ft_putnbr_uns.c \
 
 OBJS	= ${SRCS:.c=.o}
 
@@ -18,7 +19,7 @@ ${NAME} : ${OBJS}
 clean :
 	${RM} ${OBJS}
 
-fclean :	clean
-	${RM} ${NAME}
+fclean :
+	${RM} ${NAME} ${OBJS}
 
 re : fclean all

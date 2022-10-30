@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_uns.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbabahmi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/28 02:02:12 by zbabahmi          #+#    #+#             */
-/*   Updated: 2022/10/30 04:15:23 by zbabahmi         ###   ########.fr       */
+/*   Created: 2022/10/28 02:30:25 by zbabahmi          #+#    #+#             */
+/*   Updated: 2022/10/30 04:16:28 by zbabahmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr(char *s, int *len)
+void	ft_putnbr_uns(unsigned int n, int *len)
 {
-	if (s == NULL)
-		ft_putstr("(null)", len);
-	while (s && *s)
+	if (n < 10)
+		ft_putchar(n + 48, len);
+	else
 	{
-		ft_putchar(*s, len);
-		s++;
+		ft_putnbr(n / 10, len);
+		ft_putnbr(n % 10, len);
 	}
 }
